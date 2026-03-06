@@ -33,13 +33,13 @@
 
         /* --- Hero Section --- */
         /* --- Hero Section --- */
+		/* --- Hero Section Actualizado --- */
 	.hero {
-	    min-height: 100vh; /* Cambiado de height a min-height para evitar cortes en contenido */
-	    background: linear-gradient(rgba(26, 26, 46, 0.4), rgba(34, 91, 193, 0.8)), 
-	                url('img/fondo.jpg');
-	    background-repeat: no-repeat;
+	    min-height: 100vh;
+	    /* Unificamos el background en una sola declaración más limpia */
+	    background: linear-gradient(rgba(26, 26, 46, 0.5), rgba(34, 91, 193, 0.7)), 
+	                url('img/fondo.jpg') no-repeat center center;
 	    background-size: cover;
-	    background-position: center center; /* Mantiene el centro de la imagen siempre visible */
 	    
 	    display: flex;
 	    flex-direction: column;
@@ -47,19 +47,27 @@
 	    align-items: center;
 	    text-align: center;
 	    color: var(--white);
-	    padding: 40px 20px;
+	    padding: 60px 20px; /* Más aire arriba y abajo */
 	}
 	
-	/* Ajuste específico para celulares */
+	/* Ajuste para celulares */
 	@media (max-width: 768px) {
 	    .hero {
-	        /* Si tu imagen tiene el detalle importante a un lado, 
-	           puedes cambiar center por un porcentaje (ej. 80% center) */
-	        background-position: center center; 
+	        /* Centramos un poco más arriba (40%) para que los rostros 
+	           no queden tapados por el botón de inscripción */
+	        background-position: center 40%; 
+	        padding-top: 80px;
 	    }
-    
-    .hero h1 {
-        font-size: 2.2rem; /* Achicamos el texto para que no tape TODA la imagen */
+	    
+	    .hero h1 {
+	        font-size: 2rem;
+	        line-height: 1.2;
+	    }
+	
+	    /* Evita que el texto sea demasiado ancho en móviles */
+	    .hero p {
+	        font-size: 0.95rem;
+	        max-width: 90%;
 	    }
 	}
 
@@ -225,4 +233,5 @@
 </body>
 
 </html>
+
 
