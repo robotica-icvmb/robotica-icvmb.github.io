@@ -32,18 +32,36 @@
         }
 
         /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(26, 26, 46, 0.2), rgba(34, 91, 193, 0.9)), 
-                        url('img/fondo.jpg') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 20px;
-        }
+        /* --- Hero Section --- */
+	.hero {
+	    min-height: 100vh; /* Cambiado de height a min-height para evitar cortes en contenido */
+	    background: linear-gradient(rgba(26, 26, 46, 0.4), rgba(34, 91, 193, 0.8)), 
+	                url('img/fondo.jpg');
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center center; /* Mantiene el centro de la imagen siempre visible */
+	    
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    color: var(--white);
+	    padding: 40px 20px;
+	}
+	
+	/* Ajuste específico para celulares */
+	@media (max-width: 768px) {
+	    .hero {
+	        /* Si tu imagen tiene el detalle importante a un lado, 
+	           puedes cambiar center por un porcentaje (ej. 80% center) */
+	        background-position: center center; 
+	    }
+    
+    .hero h1 {
+        font-size: 2.2rem; /* Achicamos el texto para que no tape TODA la imagen */
+	    }
+	}
 
         .hero h1 {
             font-size: 3.2rem;
@@ -207,3 +225,4 @@
 </body>
 
 </html>
+
